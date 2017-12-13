@@ -1,7 +1,7 @@
 var myApp = angular.module("myApp", ["firebase"]);
 myApp.controller("chatController", ["$scope", "$firebaseArray",
     function ($scope, $firebaseArray) {
-        var ref = firebase.database().ref().child("users");
+        var ref = firebase.database().ref('users');
         $scope.chats = $firebaseArray(ref);
         $scope.update = function (user) {
             var newmessage = {from: user.name || "anonymous", body: user.chat};
